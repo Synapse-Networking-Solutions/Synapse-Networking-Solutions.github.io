@@ -142,3 +142,26 @@ accordionItems.forEach((item) => {
     item.classList.toggle('active');
   });
 });
+
+
+window.addEventListener('scroll', function() {
+  var logo = document.querySelector('.logo');
+  var stars = document.querySelectorAll('.star');
+
+  var isInViewport = function(element) {
+    var bounding = element.getBoundingClientRect();
+    return (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
+  if (isInViewport(logo)) {
+    logo.classList.add('animate');
+    stars.forEach(function(star) {
+      star.classList.add('animate');
+    });
+  }
+});
