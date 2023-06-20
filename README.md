@@ -1,1 +1,1 @@
-# Synapse-Networking-Solutions.github.io
+# Synapse Networking Solutions
