@@ -2,6 +2,9 @@
     display:grid;
     width:70vw;
 }
+.lead{
+  padding:1.8rem;
+}
 
 .grid-2{
     display:grid;
@@ -49,7 +52,7 @@
 }
 
 /* ABOUT CARD */
-#grid-item-right .card {
+.card {
     width: 300px;
     height: fit-content;
     background-color: #f1f1f1;
@@ -92,14 +95,15 @@ color:#333;
 .accordion-wrap{  position: relative;
 }
 
-#about .container::after{
+.pace-section .grid-item h3::after{
   content: '';
-  width: 400px;
+  width: 55%;
   aspect-ratio: 1/1;
   position: absolute;
   z-index: -1;
 top:0;
-right:-50%;
+left:-30%;
+overflow: hidden;
   border-radius: 50%;
   background: linear-gradient(45deg, #ff8c00, #ff4500);
 }
