@@ -55,7 +55,7 @@ h2 {
   opacity: 0;
   transform: translateY(20px);
   animation: fade-in 1s ease-out forwards;
-  font-size: 24px;
+  font-size: 3vw;
 }
 
 p {
@@ -523,12 +523,6 @@ margin: auto;
   width:80vw;
   display:flex;
   margin:auto;
-}
-
-
-
-#certifications .container, #hero .container{
-  width: 80vw;
   display: flex;
   margin: auto;
   flex-direction: column;
@@ -541,4 +535,143 @@ margin: auto;
 .lead p{
   text-align: center;
   width:55ch;
+}
+
+
+/* services-grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+  position: relative;
+  gap:0;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.service-description {
+  margin-top: 0.5rem;
+}
+
+.service-grid:before,
+.service-grid:after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 2rem);
+  height: 1px;
+  background-color: lightgray;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.service-grid:before {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.service-grid:after {
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.service-item:nth-child(1),
+.service-item:nth-child(2) {
+  border-top: none;
+}
+
+.service-item:nth-child(3),
+.service-item:nth-child(1) {
+  border-left: none;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.service-description {
+  margin-top: 0.5rem;
+}
+
+.service-item:hover {
+  background-color: #f9f9f9;
+}
+
+
+/* marquee  */
+.marquee-section {
+  text-align: center;
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 15s linear infinite;
+}
+
+.embed-item {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.embed-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  opacity: 0;
+  animation: fade 8s infinite;
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+}
+
+
+.marquee-content {
+  width: 80vw;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.embed-item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.embed-item:last-child {
+  margin-right: 0;
 }
