@@ -67,66 +67,78 @@ const badgeIds = [
   "9fb3d578-513b-4df7-8edf-737b1d80e037",
   "9273a297-c89f-4407-9067-7a09cfbc7916"
 ];
-// Function to create the embed nodes
-function createEmbedNodes(badgeIds) {
-  badgeIds.forEach((badgeId) => {
-    const embedContainer = document.createElement("div");
-    embedContainer.setAttribute("class", "embed-item");
+// // Function to create the embed nodes
+// function createEmbedNodes(badgeIds) {
+//   badgeIds.forEach((badgeId) => {
+//     const embedContainer = document.createElement("div");
+//     embedContainer.setAttribute("class", "embed-item");
 
-    const embedDiv = document.createElement("div");
-    embedDiv.setAttribute("data-iframe-width", "270");
-    embedDiv.setAttribute("data-iframe-height", "270");
-    embedDiv.setAttribute("data-share-badge-id", badgeId);
-    embedDiv.setAttribute("data-share-badge-host", "https://www.credly.com");
+//     const embedDiv = document.createElement("div");
+//     embedDiv.setAttribute("data-iframe-width", "270");
+//     embedDiv.setAttribute("data-iframe-height", "270");
+//     embedDiv.setAttribute("data-share-badge-id", badgeId);
+//     embedDiv.setAttribute("data-share-badge-host", "https://www.credly.com");
 
-    const embedScript = document.createElement("script");
-    embedScript.setAttribute("type", "text/javascript");
-    embedScript.setAttribute(
-      "src",
-      "//cdn.credly.com/assets/utilities/embed.js"
-    );
-    embedScript.async = true;
+//     const embedScript = document.createElement("script");
+//     embedScript.setAttribute("type", "text/javascript");
+//     embedScript.setAttribute(
+//       "src",
+//       "//cdn.credly.com/assets/utilities/embed.js"
+//     );
+//     embedScript.async = true;
 
-    embedContainer.appendChild(embedDiv);
-    embedContainer.appendChild(embedScript);
-    marqueeContent.appendChild(embedContainer);
-  });
-}
+//     embedContainer.appendChild(embedDiv);
+//     embedContainer.appendChild(embedScript);
+//     marqueeContent.appendChild(embedContainer);
+//   });
+// }
 
-// Function to start the marquee animation
-function startMarquee() {
-  const marqueeWidth = marqueeContent.offsetWidth;
-  const badges = marqueeContent.getElementsByClassName("embed-item");
-  const badgeWidth = badges[0].offsetWidth;
+// // Function to start the marquee animation
+// function startMarquee() {
+//   const marqueeWidth = marqueeContent.offsetWidth;
+//   const badges = marqueeContent.getElementsByClassName("embed-item");
+//   const badgeWidth = badges[0].offsetWidth;
 
-  let translateX = 0;
-  let index = 0;
+//   let translateX = 0;
+//   let index = 0;
 
-  function animateMarquee() {
-    if (translateX <= -((badgeWidth + 20) * (badges.length - 4))) {
-      translateX = 0;
-      index = 0;
-    } else {
-      translateX -= badgeWidth + 20;
-      index++;
-    }
+//   function animateMarquee() {
+//     if (translateX <= -((badgeWidth + 20) * (badges.length - 4))) {
+//       translateX = 0;
+//       index = 0;
+//     } else {
+//       translateX -= badgeWidth + 20;
+//       index++;
+//     }
 
-    marqueeContent.style.transform = `translateX(${translateX}px)`;
+//     marqueeContent.style.transform = `translateX(${translateX}px)`;
 
-    // If the last badge is fully visible, clone the first badge and append it
-    if (index === badges.length - 4) {
-      const firstBadge = badges[0].cloneNode(true);
-      marqueeContent.appendChild(firstBadge);
-    }
+//     // If the last badge is fully visible, clone the first badge and append it
+//     if (index === badges.length - 4) {
+//       const firstBadge = badges[0].cloneNode(true);
+//       marqueeContent.appendChild(firstBadge);
+//     }
 
-    requestAnimationFrame(animateMarquee);
-  }
+//     requestAnimationFrame(animateMarquee);
+//   }
 
-  animateMarquee();
-}
+//   animateMarquee();
+// }
 
 // Call the function to create the embed nodes
-createEmbedNodes(badgeIds);
+// createEmbedNodes(badgeIds);
 
-// Start the marquee animation
-startMarquee();
+// // Start the marquee animation
+// startMarquee();
+
+
+// Accordion
+// Add event listeners to toggle accordion items
+const accordionItems = document.querySelectorAll('.accordion-item');
+
+accordionItems.forEach((item) => {
+  const header = item.querySelector('.accordion-header');
+  header.addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});

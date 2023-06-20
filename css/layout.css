@@ -1,0 +1,171 @@
+.grid{
+    display:grid;
+    width:70vw;
+}
+
+.grid-2{
+    display:grid;
+    grid-template-columns: repeat(2 , 1fr);
+    gap:3rem;
+}
+
+.grid-2L{
+  display:grid;
+    grid-template-columns:2fr, 1fr;
+
+}
+
+.grid-2R{
+    grid-template-columns:1fr, 2fr;
+
+}
+
+/* ABOUT */
+#about .grid-item h2, .pace-section h2{
+    font-size: 8rem;
+    line-height: 7rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+#about .grid-item .display{
+    font-size: 8rem;
+    text-transform: uppercase;
+    line-height: 5rem;
+}
+#about #grid-item-right {
+    display:flex;
+       width: 100%;
+        justify-content: flex-end;
+        align-content: center;
+        flex-wrap: nowrap;
+        align-items: center;
+        flex-direction: row;
+  
+}
+#about #grid-item-right img{
+    width:120px;
+    height: auto;
+
+}
+
+/* ABOUT CARD */
+#grid-item-right .card {
+    width: 300px;
+    height: fit-content;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  #grid-item-right .card h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  #grid-item-right .card h2::before {
+content: 'VINCENT';
+font-size: 1.8rem;
+display: block;
+color:#333;
+
+  }
+  
+  #grid-item-right .card p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+ #grid-item-right .card .stars {
+    color: gold;
+  }
+  
+/* ACCORDION */
+.accordion , .accordion-wrap{
+  font-family: "Poppins", Arial, sans-serif;
+  width: 100%;
+  margin:auto;
+  min-width: 30vw; /* Adjust the value as needed */
+}
+
+.accordion-wrap{  position: relative;
+}
+
+#about .container::after{
+  content: '';
+  width: 400px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  z-index: -1;
+top:0;
+right:-50%;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff8c00, #ff4500);
+}
+.accordion-item {
+  border-bottom: 1px solid #eaeaea;
+  width: 100%;
+}
+
+.accordion-header {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: bold;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header::after {
+  content: '\25BA';
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%) rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.accordion-item.active .accordion-header::after {
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.accordion-content {
+  padding: 12px;
+  display: none;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+  background-color: #f5f5f5;
+}
+
+/* Improved readability and flow of content */
+.accordion-content p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+}
+
+.accordion-content ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.accordion-content ul li {
+  margin-bottom: 5px;
+}
+
+.accordion-content strong {
+  font-weight: bold;
+}
+
+

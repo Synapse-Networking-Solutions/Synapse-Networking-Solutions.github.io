@@ -195,23 +195,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-.certifications {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-  min-height: 200px; /* Adjust the minimum height as needed */
-}
-
-.certification {
-  margin-right: 20px;
-}
-
-.company-logos {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-  min-height: 200px; /* Adjust the minimum height as needed */
-}
 
 .stats {
   display: grid;
@@ -240,6 +223,7 @@ footer {
 
 section {
   height: 100vh;
+  display: block;
 }
 
 /* HERO */
@@ -674,4 +658,11 @@ margin: auto;
 
 .embed-item:last-child {
   margin-right: 0;
+}
+
+
+/* ABOUT */
+
+#about.container h2{
+padding:1rem;
 }
