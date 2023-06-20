@@ -188,9 +188,6 @@ overflow: hidden;
     transform-origin: bottom left;
     z-index: -99;
     position: absolute;
-    top: 30%;
-
-
 }
 
 .flex-container {
